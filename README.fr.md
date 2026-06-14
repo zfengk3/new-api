@@ -126,22 +126,22 @@ docker-compose up -d
 
 ```bash
 # Tirer la dernière image
-docker pull calciumion/new-api:latest
+docker pull ghcr.io/zfengk3/new-api:latest
 
 # Utilisation de SQLite (par défaut)
 docker run --name new-api -d --restart always \
-  -p 3000:3000 \
+  -p 18327:18327 \
   -e TZ=Asia/Shanghai \
   -v ./data:/data \
-  calciumion/new-api:latest
+  ghcr.io/zfengk3/new-api:latest
 
 # Utilisation de MySQL
 docker run --name new-api -d --restart always \
-  -p 3000:3000 \
+  -p 18327:18327 \
   -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" \
   -e TZ=Asia/Shanghai \
   -v ./data:/data \
-  calciumion/new-api:latest
+  ghcr.io/zfengk3/new-api:latest
 ```
 
 > **💡 Astuce:** `-v ./data:/data` sauvegardera les données dans le dossier `data` du répertoire actuel, vous pouvez également le changer en chemin absolu comme `-v /your/custom/path:/data`
@@ -150,7 +150,7 @@ docker run --name new-api -d --restart always \
 
 ---
 
-🎉 Après le déploiement, visitez `http://localhost:3000` pour commencer à utiliser!
+🎉 Après le déploiement, visitez `http://localhost:18327` pour commencer à utiliser!
 
 > [!WARNING]
 > Lorsque vous exploitez ce projet en tant que service public d'IA générative ou service de revente d'API, les utilisateurs doivent d'abord remplir toutes les obligations requises en matière d'enregistrement, de licence, de sécurité du contenu, de vérification d'identité, de conservation des journaux, de fiscalité, de paiement et d'autorisation en amont.
@@ -295,7 +295,7 @@ docker run --name new-api -d --restart always \
 ## 🚢 Déploiement
 
 > [!TIP]
-> **Dernière image Docker:** `calciumion/new-api:latest`
+> **Dernière image Docker:** `ghcr.io/zfengk3/new-api:latest`
 
 ### 📋 Exigences de déploiement
 
@@ -358,20 +358,20 @@ docker-compose up -d
 **Utilisation de SQLite:**
 ```bash
 docker run --name new-api -d --restart always \
-  -p 3000:3000 \
+  -p 18327:18327 \
   -e TZ=Asia/Shanghai \
   -v ./data:/data \
-  calciumion/new-api:latest
+  ghcr.io/zfengk3/new-api:latest
 ```
 
 **Utilisation de MySQL:**
 ```bash
 docker run --name new-api -d --restart always \
-  -p 3000:3000 \
+  -p 18327:18327 \
   -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" \
   -e TZ=Asia/Shanghai \
   -v ./data:/data \
-  calciumion/new-api:latest
+  ghcr.io/zfengk3/new-api:latest
 ```
 
 > **💡 Explication du chemin:**

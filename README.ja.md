@@ -126,22 +126,22 @@ docker-compose up -d
 
 ```bash
 # 最新のイメージをプル
-docker pull calciumion/new-api:latest
+docker pull ghcr.io/zfengk3/new-api:latest
 
 # SQLiteを使用（デフォルト）
 docker run --name new-api -d --restart always \
-  -p 3000:3000 \
+  -p 18327:18327 \
   -e TZ=Asia/Shanghai \
   -v ./data:/data \
-  calciumion/new-api:latest
+  ghcr.io/zfengk3/new-api:latest
 
 # MySQLを使用
 docker run --name new-api -d --restart always \
-  -p 3000:3000 \
+  -p 18327:18327 \
   -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" \
   -e TZ=Asia/Shanghai \
   -v ./data:/data \
-  calciumion/new-api:latest
+  ghcr.io/zfengk3/new-api:latest
 ```
 
 > **💡 ヒント:** `-v ./data:/data` は現在のディレクトリの `data` フォルダにデータを保存します。絶対パスに変更することもできます：`-v /your/custom/path:/data`
@@ -150,7 +150,7 @@ docker run --name new-api -d --restart always \
 
 ---
 
-🎉 デプロイが完了したら、`http://localhost:3000` にアクセスして使用を開始してください！
+🎉 デプロイが完了したら、`http://localhost:18327` にアクセスして使用を開始してください！
 
 > [!WARNING]
 > 本プロジェクトを公衆向け生成 AI サービスまたは API 再販サービスとして運営する場合、ユーザーは届出、コンテンツセキュリティ、本人確認、ログ保持、税務、決済、上流認可などの必要なコンプライアンス義務を先に完了してください。
@@ -297,7 +297,7 @@ docker run --name new-api -d --restart always \
 ## 🚢 デプロイ
 
 > [!TIP]
-> **最新のDockerイメージ:** `calciumion/new-api:latest`
+> **最新のDockerイメージ:** `ghcr.io/zfengk3/new-api:latest`
 
 ### 📋 デプロイ要件
 
@@ -360,20 +360,20 @@ docker-compose up -d
 **SQLiteを使用:**
 ```bash
 docker run --name new-api -d --restart always \
-  -p 3000:3000 \
+  -p 18327:18327 \
   -e TZ=Asia/Shanghai \
   -v ./data:/data \
-  calciumion/new-api:latest
+  ghcr.io/zfengk3/new-api:latest
 ```
 
 **MySQLを使用:**
 ```bash
 docker run --name new-api -d --restart always \
-  -p 3000:3000 \
+  -p 18327:18327 \
   -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" \
   -e TZ=Asia/Shanghai \
   -v ./data:/data \
-  calciumion/new-api:latest
+  ghcr.io/zfengk3/new-api:latest
 ```
 
 > **💡 パス説明:**

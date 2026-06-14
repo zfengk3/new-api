@@ -126,22 +126,22 @@ docker-compose up -d
 
 ```bash
 # 拉取最新鏡像
-docker pull calciumion/new-api:latest
+docker pull ghcr.io/zfengk3/new-api:latest
 
 # 使用 SQLite（預設）
 docker run --name new-api -d --restart always \
-  -p 3000:3000 \
+  -p 18327:18327 \
   -e TZ=Asia/Shanghai \
   -v ./data:/data \
-  calciumion/new-api:latest
+  ghcr.io/zfengk3/new-api:latest
 
 # 使用 MySQL
 docker run --name new-api -d --restart always \
-  -p 3000:3000 \
+  -p 18327:18327 \
   -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" \
   -e TZ=Asia/Shanghai \
   -v ./data:/data \
-  calciumion/new-api:latest
+  ghcr.io/zfengk3/new-api:latest
 ```
 
 > **💡 提示：** `-v ./data:/data` 會將數據保存在當前目錄的 `data` 資料夾中，你也可以改為絕對路徑如 `-v /your/custom/path:/data`
@@ -150,7 +150,7 @@ docker run --name new-api -d --restart always \
 
 ---
 
-🎉 部署完成後，訪問 `http://localhost:3000` 即可使用！
+🎉 部署完成後，訪問 `http://localhost:18327` 即可使用！
 
 > [!WARNING]
 > 將本專案作為面向公眾的生成式 AI 服務或 API 轉售服務運營時，使用者應先完成備案、內容安全、實名、日誌留存、稅務、支付和上游授權等合規義務。
@@ -295,7 +295,7 @@ docker run --name new-api -d --restart always \
 ## 🚢 部署
 
 > [!TIP]
-> **最新版 Docker 鏡像：** `calciumion/new-api:latest`
+> **最新版 Docker 鏡像：** `ghcr.io/zfengk3/new-api:latest`
 
 ### 📋 部署要求
 
@@ -358,20 +358,20 @@ docker-compose up -d
 **使用 SQLite：**
 ```bash
 docker run --name new-api -d --restart always \
-  -p 3000:3000 \
+  -p 18327:18327 \
   -e TZ=Asia/Shanghai \
   -v ./data:/data \
-  calciumion/new-api:latest
+  ghcr.io/zfengk3/new-api:latest
 ```
 
 **使用 MySQL：**
 ```bash
 docker run --name new-api -d --restart always \
-  -p 3000:3000 \
+  -p 18327:18327 \
   -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" \
   -e TZ=Asia/Shanghai \
   -v ./data:/data \
-  calciumion/new-api:latest
+  ghcr.io/zfengk3/new-api:latest
 ```
 
 > **💡 路徑說明：**

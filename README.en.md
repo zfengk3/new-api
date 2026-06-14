@@ -121,22 +121,22 @@ docker-compose up -d
 
 ```bash
 # Pull the latest image
-docker pull calciumion/new-api:latest
+docker pull ghcr.io/zfengk3/new-api:latest
 
 # Using SQLite (default)
 docker run --name new-api -d --restart always \
-  -p 3000:3000 \
+  -p 18327:18327 \
   -e TZ=Asia/Shanghai \
   -v ./data:/data \
-  calciumion/new-api:latest
+  ghcr.io/zfengk3/new-api:latest
 
 # Using MySQL
 docker run --name new-api -d --restart always \
-  -p 3000:3000 \
+  -p 18327:18327 \
   -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" \
   -e TZ=Asia/Shanghai \
   -v ./data:/data \
-  calciumion/new-api:latest
+  ghcr.io/zfengk3/new-api:latest
 ```
 
 > **💡 Tip:** `-v ./data:/data` will save data in the `data` folder of the current directory, you can also change it to an absolute path like `-v /your/custom/path:/data`
@@ -145,7 +145,7 @@ docker run --name new-api -d --restart always \
 
 ---
 
-🎉 After deployment is complete, visit `http://localhost:3000` to start using!
+🎉 After deployment is complete, visit `http://localhost:18327` to start using!
 
 > [!WARNING]
 > When operating this project as a public generative AI service or API resale service, users should first complete all required filing, licensing, content safety, real-name verification, log retention, tax, payment, and upstream authorization obligations.
@@ -288,7 +288,7 @@ docker run --name new-api -d --restart always \
 ## 🚢 Deployment
 
 > [!TIP]
-> **Latest Docker image:** `calciumion/new-api:latest`
+> **Latest Docker image:** `ghcr.io/zfengk3/new-api:latest`
 
 ### 📋 Deployment Requirements
 
@@ -351,20 +351,20 @@ docker-compose up -d
 **Using SQLite:**
 ```bash
 docker run --name new-api -d --restart always \
-  -p 3000:3000 \
+  -p 18327:18327 \
   -e TZ=Asia/Shanghai \
   -v ./data:/data \
-  calciumion/new-api:latest
+  ghcr.io/zfengk3/new-api:latest
 ```
 
 **Using MySQL:**
 ```bash
 docker run --name new-api -d --restart always \
-  -p 3000:3000 \
+  -p 18327:18327 \
   -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" \
   -e TZ=Asia/Shanghai \
   -v ./data:/data \
-  calciumion/new-api:latest
+  ghcr.io/zfengk3/new-api:latest
 ```
 
 > **💡 Path explanation:** 
